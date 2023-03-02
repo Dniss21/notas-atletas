@@ -16,37 +16,17 @@ let atletas = [
       notas: [10,10,10,9,9.5]
   }
   ];
-     let nomesDosCompetidores = 0
-     let mediaValida = 0
-     let notasObtidas = 0
-     for (let i = 0; i < atletas.length; i++){
+     let atletasOrd=atletas.map((atleta)=>{
+    console.log(Atleta: ${atleta.nome});
+    console.log(Notas: ${atleta.notas});
+    let notasOrd=atleta.notas.sort((a,b)=>{return a-b});
 
-         nomesDosCompetidores = atletas.map(function(nomes){
-             return nomes.nome
-         })
-         notasObtidas = atletas.map(function(nota){
-             let total =  nota.notas
-             total.sort(function(a,b){
-                 return a - b;
-             });
-             return total
-         })
+    let notasSlice=notasOrd.slice(1,4);
 
-     }
-
-     for (let i = 0; i < atletas.length; i++){
-       switch(i){
-           case i:
-           console.log(Atletas`${nomesDosCompetidores[i]}`)
-           console.log(NotasObtidas`${notasObtidas[i]}`)
-      let notasAtleta = notasObtidas[i].slice(1,notasObtidas[i].length-1) 
-      let soma = notasAtleta.reduce(function(total, atual){
-          return (total + atual)
-      })
-      let media = soma/notasAtleta.length
-      console.log(MediaValida `${media}`)
-        console.log(console.log("Atleta não cadastrado")
-        );
-
-       }
-     }
+    let somaNota = 0;
+    for (let i = 0; i <notasSlice.length; i++) {
+        somaNota+=notasSlice[i];
+    }
+    console.log("Média " + somaNota / notasSlice.length)
+})
+         
